@@ -30,10 +30,14 @@ RUN set -eux; \
 		armv7) dockerArch='armhf' ;; \
 # arm64v8
 		aarch64) dockerArch='aarch64' ;; \
+# ppc64le
+		ppc64le) dockerArch='ppc64le' ;; \
+# s390x
+		s390x) dockerArch='s390x' ;; \
 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;;\
 	esac; \
 	\
-	if ! wget -O docker.tgz "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/${dockerArch}/docker-${DOCKER_VERSION}.tgz"; then \
+	if ! wget -O docker.tgz "https://ftp.osuosl.org/pub/osl/docker/static/${DOCKER_CHANNEL}/${dockerArch}/docker-${DOCKER_VERSION}.tgz"; then \
 		echo >&2 "error: failed to download 'docker-${DOCKER_VERSION}' from '${DOCKER_CHANNEL}' for '${dockerArch}'"; \
 		exit 1; \
 	fi; \
