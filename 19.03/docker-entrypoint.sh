@@ -29,9 +29,9 @@ fi
 # if DOCKER_HOST isn't set (no custom setting, no default socket), let's set it to a sane remote value
 if [ -z "${DOCKER_HOST:-}" ]; then
 	if _should_tls || [ -n "${DOCKER_TLS_VERIFY:-}" ]; then
-		export DOCKER_HOST='tcp://docker:2376'
+		export DOCKER_HOST='tcp://osuosl-docker-ppc64le:2376'
 	else
-		export DOCKER_HOST='tcp://docker:2375'
+		export DOCKER_HOST='tcp://osuosl-docker-ppc64le:2375'
 	fi
 fi
 if [ "${DOCKER_HOST#tcp:}" != "$DOCKER_HOST" ] \
