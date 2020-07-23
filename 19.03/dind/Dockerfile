@@ -1,4 +1,4 @@
-FROM docker:19.03
+FROM osuosl/docker-ppc64le:19.03
 
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 RUN set -eux; \
