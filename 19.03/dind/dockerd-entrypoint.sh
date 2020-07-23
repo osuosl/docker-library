@@ -12,6 +12,7 @@ _tls_san() {
 			cat /etc/hostname
 			echo 'docker'
 			echo 'localhost'
+			echo 'osuosl-docker-ppc64le'
 			hostname -f
 			hostname -s
 		} | sed 's/^/DNS:/'
